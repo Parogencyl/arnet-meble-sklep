@@ -1,0 +1,116 @@
+.nav1 {
+    font-size: 18px;
+}
+
+.categoryMenu {
+    box-shadow: 0 0 4px 0px black;
+}
+
+.ul1 li a {
+    color: white;
+    transition: 0.4s;
+}
+
+#zamowieniaButton {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.ul1 li:hover > a {
+    color: rgb(202, 202, 202);
+    transform: rotate(-2deg);
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.roughly a:hover {
+    background-color: rgb(170, 67, 67);
+}
+
+.collapse > ul > li > a {
+    font-size: 18px;
+}
+
+.navdown {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #fff;
+    border: solid 1px lightgray;
+    border-radius: 5px 5px 10px 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 6px 0px rgb(187, 187, 187);
+}
+
+.navdown a {
+    color: black;
+    transition: 0.3s;
+    font-size: 1.1em;
+}
+
+.navdown a:hover {
+    background-color: rgb(245, 245, 245);
+    font-weight: bold;
+}
+
+#equipment {
+    display: none;
+}
+
+#furniture {
+    display: none;
+}
+
+#accessories {
+    display: none;
+}
+
+.collapse > ul > li {
+    transition: 0.5s;
+}
+
+.collapse li:hover {
+    background-color: lightgray;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+footer a:hover {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 26px;
+}
+
+.nav-item > a {
+    position: relative;
+}
+
+.nav-item > a > .badge {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+
+@media all and (min-width: 992px) {
+    .navbar-nav .nav-item .dropdown-menu {
+        display: none;
+    }
+
+    .navbar-nav .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+.footerTitle {
+    font-size: 18px;
+}

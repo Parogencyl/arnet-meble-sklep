@@ -1,0 +1,103 @@
+.element {
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    border: solid 2px rgb(128, 0, 0);
+}
+
+.element p {
+    font-size: 16px;
+}
+
+div {
+    font-size: 16px;
+}
+
+#amount {
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.amount {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0;
+    transition: 0.5s;
+}
+
+.amount:hover {
+    color: green;
+}
+
+.trash {
+    font-size: 30px;
+    color: rgb(63, 63, 63);
+    transition: 0.4s;
+}
+
+.trash:hover {
+    color: #e3342f;
+}
+
+.other {
+    font-size: 14px;
+    color: gray;
+    text-align: left;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 70px solid rgb(148, 201, 148);
+    position: relative;
+}
+
+.active {
+    border-left: 70px solid green;
+}
+
+.textActive {
+    font-weight: bold;
+}
+
+.triangle div {
+    position: absolute;
+    left: -55px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.triangle ~ span {
+    font-size: 14px;
+}
+
+.updash1 {
+    width: calc(100% - 70px - 158px);
+}
+
+.updash2 {
+    width: calc(100% - 70px - 139px);
+}
+
+.updash3 {
+    width: calc(100% - 70px - 192px);
+}
+
+.dash {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: green;
+    border-radius: 50%;
+}

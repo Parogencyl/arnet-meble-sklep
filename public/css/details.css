@@ -1,0 +1,81 @@
+p {
+    font-size: 24px;
+    text-align: justify;
+}
+
+.form-group p {
+    font-size: 18px;
+}
+
+.amount {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0;
+    transition: 0.5s;
+}
+
+.amount:hover {
+    color: green;
+}
+
+#mainPhoto {
+    height: 400px;
+}
+
+@media screen and (max-width: 1200px) {
+    #mainPhoto {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #mainPhoto {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #mainPhoto {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #mainPhoto {
+        height: 250px;
+    }
+}
+
+#amount {
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#addToCard {
+    width: 90%;
+    margin: 0 5%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.heart {
+    font-size: 35px;
+}
+
+.favorites {
+    font-size: 40px;
+    background-color: inherit;
+}
+
+.tableText {
+    font-size: 16px;
+}
+
+.description {
+    font-size: 16px;
+}

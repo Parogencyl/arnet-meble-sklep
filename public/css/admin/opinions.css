@@ -1,0 +1,85 @@
+#statystic {
+    background-color: rgb(200, 200, 200);
+    border-radius: 5px;
+}
+
+div span {
+    font-size: 16px;
+}
+
+#commentNav {
+    border-radius: 5px;
+    background-color: rgb(99, 99, 99);
+    color: white;
+}
+
+.fa-star {
+    color: rgb(209, 209, 0);
+    font-size: 18px;
+}
+
+.underline {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(99, 99, 99);
+}
+
+.delete {
+    font-size: 35px;
+    background-color: rgb(200, 200, 200);
+}
+
+.add {
+    font-size: 35px;
+    background-color: rgb(200, 200, 200);
+}
+
+#pagination > nav > div > div > p {
+    display: none;
+}
+
+#pagination > nav > div > span {
+    display: none;
+}
+
+#pagination > nav > div > a {
+    display: none;
+}
+
+#pagination svg {
+    width: 30px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#pagination span > span > span {
+    color: black;
+    background-color: rgb(200, 200, 200) !important;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#pagination div > span > a {
+    color: white;
+    background-color: rgb(73, 73, 73) !important;
+    transition: 0.4s;
+}
+
+#pagination div > span > a > svg {
+    margin-top: 0;
+}
+
+#pagination div > span > a:hover {
+    color: white;
+    background-color: rgb(109, 109, 109) !important;
+}
+
+#pagination a {
+    text-decoration: none;
+}
+
+#pagination div > span > a {
+    display: inline-block;
+    margin-top: 5px;
+}

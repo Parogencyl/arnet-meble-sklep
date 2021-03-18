@@ -1,0 +1,112 @@
+.element {
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    border: solid 2px rgb(128, 0, 0);
+}
+
+.element p {
+    font-size: 16px;
+}
+
+p {
+    font-size: 24px;
+    text-align: justify;
+}
+
+.promotion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    font-weight: bold;
+    background-color: rgba(228, 228, 228, 0.7);
+    border-radius: 0 0 5px 0;
+}
+
+.item {
+    position: relative;
+    z-index: 5;
+}
+
+.favorites {
+    position: absolute;
+    top: 0;
+    background-color: rgba(228, 228, 228, 0.7);
+    border-radius: 0 0 0 5px;
+    right: 0;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.bottom {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.form-group p {
+    font-size: 18px;
+}
+
+#pagination > nav > div > div > p {
+    display: none;
+}
+
+#pagination > nav > div > span {
+    display: none;
+}
+
+#pagination > nav > div > a {
+    display: none;
+}
+
+#pagination svg {
+    width: 30px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#pagination span > span > span {
+    color: black;
+    background-color: rgb(200, 200, 200) !important;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#pagination div > span > a {
+    color: white;
+    background-color: rgb(73, 73, 73) !important;
+    transition: 0.4s;
+}
+
+#pagination div > span > a > svg {
+    margin-top: 0;
+}
+
+#pagination div > span > a:hover {
+    color: white;
+    background-color: rgb(109, 109, 109) !important;
+}
+
+#pagination a {
+    text-decoration: none;
+}
+
+#pagination div > span > a {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.notavailable {
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.171);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
