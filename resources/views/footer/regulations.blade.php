@@ -9,25 +9,22 @@
         <b>REGULAMIN SKLEPU INTERNETOWEGO</b>
         <br>
         1. Niniejszy Regulamin określa ogólne warunki, zasady oraz sposób sprzedaży prowadzonej przez Artura Tarazewicza
-        prowadzącą działalność gospodarczą pod firmą Arnet meble z siedzibą w Gryfowie za pośrednictwem sklepu
-        internetowego arnet-meble.pl (zwanego dalej: „Sklepem Internetowym”) oraz określa zasady i warunki świadczenia
-        przez
-        Artura Tarazewicza prowadzącego działalność gospodarczą pod firmą Arnet meble z siedzibą w Gryfowie usług
-        nieodpłatnych drogą elektroniczną.
+        prowadzącą działalność gospodarczą pod firmą Usługi Stolarskie Arnet Artur Tarazewicz z siedzibą w Gryfowie
+        Śląskim, Ubocze 291, NIP:6161206968, REGON: 230903273 za pośrednictwem sklepu internetowego arnet-meble.pl
+        (zwanego dalej: „Sklepem Internetowym”) oraz określa zasady i warunki świadczenia przez Artura Tarazewicza
+        prowadzącego działalność gospodarczą pod firmą Usługi Stolarskie Arnet Artur Tarazewicz z siedzibą w Gryfowie
+        Śląskim usług nieodpłatnych drogą elektroniczną.
     </p>
 
     <p>
         <b>§ 1 Postanowienia ogólne i korzystanie ze Sklepu Internetowego </b>
         <br>
-        1. Wszelkie prawa do Sklepu Internetowego, w tym majątkowe prawa autorskie, prawa własności intelektualnej do
-        jego
-        nazwy, jego domeny internetowej, Strony Internetowej Sklepu, a także do wzorców, formularzy, logotypów
-        zamieszczanych na Stronie Internetowej Sklepu (z wyjątkiem logotypów i zdjęć prezentowanych na Stronie
-        Internetowej
-        Sklepu w celach prezentacji towarów, do których to prawa autorskie należą do podmiotów trzecich) należą do
-        Sprzedawcy, a korzystanie z nich może następować wyłącznie w sposób określony i zgodny z Regulaminem oraz za
-        zgodą
-        Sprzedawcy wyrażoną na piśmie.
+        1. Wszelkie prawa do Sklepu Internetowego, w tym majątkowe prawa autorskie, prawa własności
+        intelektualnej do jego nazwy, jego domeny internetowej, Strony Internetowej Sklepu, a także do wzorców,
+        formularzy, logotypów zamieszczanych na Stronie Internetowej Sklepu (z wyjątkiem logotypów i zdjęć
+        prezentowanych na Stronie Internetowej Sklepu w celach prezentacji towarów, do których to prawa autorskie
+        należą do podmiotów trzecich) należą do Sprzedawcy, a korzystanie z nich może następować wyłącznie w
+        sposób określony i zgodny z Regulaminem oraz za zgodą Sprzedawcy wyrażoną na piśmie.
         <br>
         2. Sprzedawca dołoży starań, aby korzystanie ze Sklepu Internetowego było możliwe dla użytkowników Internetu z
         użyciem wszystkich popularnych przeglądarek internetowych, systemów operacyjnych, typów urządzeń oraz typów
@@ -68,21 +65,19 @@
     <p>
         <b> § 2 Rejestracja </b>
         <br>
-        1. W celu utworzenia Konta Klienta, Klient obowiązany jest dokonać nieodpłatnej Rejestracji.
+        1.W celu utworzenia Konta Klienta, Klient obowiązany jest dokonać nieodpłatnej Rejestracji.
         <br>
-        2. Rejestracja jest konieczna do złożenia zamówienia w Sklepie Internetowym.
-        <br>
-        3. W celu Rejestracji, Klient powinien wypełnić formularz rejestracyjny udostępniony przez Sprzedawcę na Stronie
+        2. W celu Rejestracji, Klient powinien wypełnić formularz rejestracyjny udostępniony przez Sprzedawcę na Stronie
         Internetowej Sklepu i przesłać wypełniony formularz rejestracyjny drogą elektroniczną do Sprzedawcy poprzez
         wybór
         odpowiedniej funkcji znajdującej się w formularzu rejestracyjnym. Podczas Rejestracji Klient ustala indywidualne
         Hasło.
         <br>
-        4. W trakcie wypełniania formularza rejestracyjnego, Klient ma możliwość zapoznania się z Regulaminem,
+        3. W trakcie wypełniania formularza rejestracyjnego, Klient ma możliwość zapoznania się z Regulaminem,
         akceptując
         jego treść poprzez oznaczenie odpowiedniego pola w formularzu.
         <br>
-        5. Po przesłaniu wypełnionego formularza rejestracyjnego Klient otrzymuje niezwłocznie, drogą elektroniczną na
+        4. Po przesłaniu wypełnionego formularza rejestracyjnego Klient otrzymuje niezwłocznie, drogą elektroniczną na
         adres
         poczty elektronicznej podany w formularzu rejestracyjnym potwierdzenie Rejestracji przez Sprzedawcę. Z tą chwilą
         zawarta zostaje umowa o świadczenie drogą elektroniczną usługi Prowadzenie Konta Klienta, zaś Klient uzyskuje
@@ -107,7 +102,7 @@
         prezentowanym na Stronie Internetowej Sklepu. Klient po skompletowaniu całości zamówienia i wskazaniu w
         „KOSZYKU”
         sposobu Dostawy oraz formy płatności, składa zamówienie przez wysłanie formularza zamówienia do Sprzedawcy,
-        wybierając na Stronie Internetowej Sklepu przycisk „KUPUJĘ I PŁACĘ”. Każdorazowo przed wysyłką zamówienia do
+        wybierając na Stronie Internetowej Sklepu przycisk „ZAMÓW I ZAPŁAĆ”. Każdorazowo przed wysyłką zamówienia do
         Sprzedawcy, Klient jest informowany o łącznej cenie za wybrany Towar i Dostawę, jak też o wszystkich dodatkowych
         kosztach jakie jest zobowiązany ponieść w związku z Umową sprzedaży.
         <br>
@@ -118,21 +113,16 @@
         5. Po złożeniu zamówienia, Sprzedawca przesyła na podany przez Klienta adres poczty elektronicznej potwierdzenie
         jego złożenia.
         <br>
-        6. Następnie, po potwierdzeniu złożenia zamówienia, Sprzedawca przesyła na podany przez Klienta adres poczty
-        elektronicznej informację o przyjęciu zamówienia do realizacji. Informacja o przyjęciu zamówienia do realizacji
-        jest
-        oświadczeniem Sprzedawcy o przyjęciu oferty, o której mowa w §4 ust. 4 powyżej i z chwilą jego otrzymania przez
-        Klienta zostaje zawarta Umowa sprzedaży.
-        adres poczty elektronicznej Klienta lub pisemnie na wskazany przez Klienta podczas Rejestracji lub składania
+        6. Informacja o przyjęciu zamówienia do realizacji jest oświadczeniem Sprzedawcy o przyjęciu oferty, o której
+        mowa w §4 ust. 4 powyżej i z chwilą jego otrzymania przez Klienta zostaje zawarta Umowa sprzedaży. adres
+        poczty elektronicznej Klienta lub pisemnie na wskazany przez Klienta podczas Rejestracji lub składania
         zamówienia adres.
     </p>
     <p>
         <b>§ 4 Płatności </b>
         <br>
-        1. Ceny na Stronie Internetowej Sklepu zamieszczone przy danym Towarze stanowią ceny brutto i nie zawierają
-        informacji odnośnie kosztów Dostawy i wszelkich innych kosztów, które Klient będzie zobowiązany ponieść w
-        związku z
-        Umową sprzedaży, o których Klient będzie poinformowany przy wyborze sposobu Dostawy i składaniu zamówienia.
+        1. Ceny na Stronie Internetowej Sklepu zamieszczone przy danym Towarze stanowią ceny brutto i zawierają
+        informację odnośnie kosztów Dostawy.
         <br>
         2. Klient może wybrać następujące formy płatności za zamówione Towary:
         <br>
@@ -140,25 +130,16 @@
         przesłaniu Klientowi przez Sprzedawcę potwierdzenia przyjęcia zamówienia oraz po wpłynięciu środków na rachunek
         bankowy Sprzedawcy);
         <br>
-        b) gotówką za pobraniem, płatność Dostawcy przy dokonywaniu Dostawy (w tym przypadku realizacja zamówienia
-        zostanie
+        b) gotówką za pobraniem, płatność Dostawcy przy dokonywaniu Dostawy;
         <br>
-        3. Po zawarciu Umowy sprzedaży, Sprzedawca potwierdza Klientowi jej warunki, przesyłając je na Trwałym nośniku,
-        na
-        rozpoczęta po przesłaniu Klientowi przez Sprzedawcę potwierdzenia przyjęcia zamówienia);
+        3. Po zawarciu Umowy sprzedaży, Sprzedawca potwierdza Klientowi jej warunki, przesyłając drogą mailową.
         <br>
-        4. Klient jest każdorazowo informowany przez Sprzedawcę na Stronie Internetowej Sklepu o terminie w jakim jest
-        zobowiązany dokonać płatności za zamówienie w wysokości wynikającej z zawartej Umowy sprzedaży.
-        <br>
-        5. W wypadku niewywiązania się przez Klienta z płatności w terminie, o którym mowa w §5 ust. 3 Regulaminu,
-        Sprzedawca wyznacza Klientowi dodatkowy termin na dokonanie płatności i informuje o nim Klienta na Trwałym
-        nośniku.
-        Informacja o dodatkowym terminie na dokonanie płatności zawiera również informację, że po bezskutecznym upływie
-        tego
-        terminu, Sprzedawca odstąpi od Umowy sprzedaży. W wypadku bezskutecznego upływu drugiego terminu na dokonanie
-        płatności, Sprzedawca prześle Klientowi na Trwałym nośniku oświadczenie o odstąpieniu od umowy na podstawie art.
-        491
-        Kodeksu Cywilnego.
+        4. W wypadku niewywiązania się przez Klienta z płatności w terminie, o którym mowa w §5 ust. 3
+        Regulaminu, Sprzedawca wyznacza Klientowi dodatkowy termin na dokonanie płatności i informuje o nim
+        Klienta na Trwałym nośniku. Informacja o dodatkowym terminie na dokonanie płatności zawiera również
+        informację, że po bezskutecznym upływie tego terminu, Sprzedawca odstąpi od Umowy sprzedaży. W
+        wypadku bezskutecznego upływu drugiego terminu na dokonanie płatności, Sprzedawca prześle Klientowi na
+        Trwałym nośniku oświadczenie o odstąpieniu od umowy na podstawie art. 491 Kodeksu Cywilnego.
     </p>
     <p>
         <b>§ 5 Dostawa </b>
@@ -167,45 +148,37 @@
         <br>
         2. Sprzedawca jest zobowiązany dostarczyć Towar będący przedmiotem Umowy sprzedaży bez wad.
         <br>
-        3. Sprzedawca zamieszcza na Stronie Internetowej Sklepu informację o liczbie Dni roboczych potrzebnych do
-        Dostawy i
-        realizacji zamówienia.
+        3. Termin Dostawy i realizacji zamówienia wskazany na Stronie Internetowej Sklepu liczony jest w Dniach
+        roboczych od dnia zawarcia Umowy sprzedaży w wypadku wyboru przez Klienta opcji płatności „za
+        pobraniem”.
         <br>
-        4. Termin Dostawy i realizacji zamówienia wskazany na Stronie Internetowej Sklepu liczony jest w Dniach
-        roboczych
-        zgodnie z §5 ust. 2 Regulaminu.
+        4. Zamówione Towary są dostarczane do Klienta za pośrednictwem Dostawcy na adres wskazany w
+        formularzu zamówienia.
         <br>
-        5. Termin Dostawy i realizacji zamówienia wskazany na Stronie Internetowej Sklepu liczony jest w Dniach
-        roboczych od
-        dnia zawarcia Umowy sprzedaży w wypadku wyboru przez Klienta opcji płatności „za pobraniem”.
-        <br>
-        6. Zamówione Towary są dostarczane do Klienta za pośrednictwem Dostawcy na adres wskazany w formularzu
+        5. Zamówione Towary są dostarczane do Klienta za pośrednictwem Dostawcy na adres wskazany w formularzu
         zamówienia.
         <br>
-        7. W dniu wysłania Towaru do Klienta (jeśli nie wybrano możliwości osobistego odbioru Towaru) przekazywana jest
+        6. W dniu wysłania Towaru do Klienta (jeśli nie wybrano możliwości osobistego odbioru Towaru) przekazywana jest
         na
         adres poczty elektronicznej Klienta informacja potwierdzająca nadanie przesyłki przez Sprzedawcę.
         <br>
-        8. Klient obowiązany jest zbadać doręczoną przesyłkę w czasie i w sposób przyjęty przy przesyłkach danego
-        rodzaju. W
-        razie stwierdzenia ubytku lub uszkodzenia przesyłki Klient ma prawo żądać od pracownika Dostawcy spisania
-        właściwego
-        protokołu.
+        7. Klient obowiązany jest zbadać doręczoną przesyłkę w czasie i w sposób przyjęty przy przesyłkach danego
+        rodzaju. W razie stwierdzenia ubytku lub uszkodzenia przesyłki Klient ma prawo żądać od pracownika
+        Dostawcy spisania właściwego protokołu.
         <br>
-        9. Sprzedawca, zgodnie z wolą Klienta, dołącza do przesyłki będącej przedmiotem Dostawy paragon albo fakturę VAT
-        obejmującą dostarczane Towary.
-        Klient w celu otrzymania faktury VAT powinien zadeklarować w momencie dokonywania zakupu, że nabywa Towar, jako
-        Przedsiębiorca (podatnik). Zgłoszenie powyższej deklaracji, następuje poprzez oznaczenie odpowiedniego pola w
-        formularzu zamówienia, przed wysłaniem zamówienia do Sprzedawcy.
+        8. Sprzedawca, zgodnie z wolą Klienta, dołącza do przesyłki będącej przedmiotem Dostawy paragon albo
+        fakturę VAT obejmującą dostarczane Towary. Klient w celu otrzymania faktury VAT powinien zadeklarować w
+        momencie dokonywania zakupu, że nabywa Towar, jako Przedsiębiorca (podatnik). Zgłoszenie powyższej
+        deklaracji, następuje poprzez oznaczenie odpowiedniego pola w formularzu zamówienia, przed wysłaniem
+        zamówienia do Sprzedawcy.
         <br>
-        10. W przypadku nieobecności Klienta pod wskazanym przez niego adresem, podanym przy składaniu zamówienia jako
-        adres
-        Dostawy, pracownik Dostawcy pozostawi awizo lub podejmie próbę kontaktu telefonicznego celem ustalenia terminu,
-        w
-        którym Klient będzie obecny. W przypadku zwrotnego odesłania zamówionego Towaru do Sklepu Internetowego przez
-        Dostawcę, Sprzedawca skontaktuje się z Klientem drogą elektroniczną lub telefonicznie, ustalając ponownie z
-        Klientem
-        termin i koszt Dostawy.
+        9. W przypadku nieobecności Klienta pod wskazanym przez niego adresem, podanym przy składaniu
+        zamówienia jako adres Dostawy, pracownik Dostawcy pozostawi awizo lub podejmie próbę kontaktu
+        telefonicznego celem ustalenia terminu, w którym Klient będzie obecny. W przypadku zwrotnego odesłania
+        zamówionego Towaru do Sklepu Internetowego przez Dostawcę, Sprzedawca skontaktuje się z Klientem
+        drogą elektroniczną lub telefonicznie, ustalając ponownie z Klientem termin i koszt Dostawy.
+        <br>
+        10. W przypadku dużej ilości zamówień towaru możliwe jest wydłużenie czasu realizacji zamówienia.
     </p>
     <p>
         <b> § 6 Rękojmia </b>
@@ -444,7 +417,7 @@
         zmianie Regulaminu za pomocą wiadomości przesłanej drogą elektroniczną zawierającej odnośnik do tekstu
         zmienionego
         Regulaminu. W razie, gdy Klient nie akceptuje nowej treści Regulaminu obowiązany jest zawiadomić o tym fakcie
-        Sprzedawcę, co skutkuje rozwiązaniem umowy zgodnie z postanowieniami §13 Regulaminu.
+        Sprzedawcę, co skutkuje rozwiązaniem umowy zgodnie z postanowieniami.
         <br>
         6. Regulamin wchodzi w życie z dniem 01.01.2021 r.
     </p>

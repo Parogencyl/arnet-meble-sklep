@@ -7,8 +7,7 @@ use App\Http\Requests\OrderPostRequest;
 use App\Http\Requests\OrderFakturaPostRequest;
 use DB;
 use Auth;
-use Validator;
-use URL;
+use App\Http\Controllers\PrzelewyController;
 
 class CardController extends Controller
 {
@@ -137,6 +136,7 @@ class CardController extends Controller
                 DB::table('cart')->where('user_id', Auth::user()->id)->where('kategoria_id', $request->input('id'.$i))->update(['amount' => $request->input('amount'.$i)]);
             }
             session(['payment' => $request->input('payment')]);
+            session(['delivery' => $request->input('delivery')]);
             return redirect('/koszyk/zamówienie'); 
         }else{
             for ($i=0; $i < count(session()->get('cart')); $i++) { 
@@ -144,6 +144,7 @@ class CardController extends Controller
                 session()->get('cart')[$i]->amount = $amount[$i];
             }
             session(['payment' => $request->input('payment')]);
+            session(['delivery' => $request->input('delivery')]);
             return redirect('/koszyk/zamówienie'); 
         }
         return back();
@@ -311,8 +312,10 @@ class CardController extends Controller
                 if($products[$i]->ilosc_dostepnych && $products[$i]->w_sprzedazy){
                     $total += $products[$i]->cena * $products[$i]->amount;
                     $totalProducts += $products[$i]->cena * $products[$i]->amount;
-                    $delivery += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
-                    $total += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
+                    if (!(session()->get('delivery') == 'Odbiór osobisty')) {
+                        $delivery += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
+                        $total += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
+                    }
                 }
             }
         } else {
@@ -325,8 +328,10 @@ class CardController extends Controller
                     if($sessionProducts[$i]->ilosc_dostepnych && $sessionProducts[$i]->w_sprzedazy){
                         $total += $sessionProducts[$i]->cena * $sessionProducts[$i]->amount;
                         $totalProducts += $sessionProducts[$i]->cena * $sessionProducts[$i]->amount;
-                        $delivery += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
-                        $total += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+                        if (!(session()->get('delivery') == 'Odbiór osobisty')) {
+                            $delivery += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+                            $total += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+                        }
                     }
                 }
             }
@@ -343,14 +348,15 @@ class CardController extends Controller
         }
             
         
-        $order_list = '';
         $order_number = '';
-
+        $all_orders += 1;
         for ($i=0; $i < 8-(strlen($all_orders)); $i++) { 
             $order_number .= '0';
         }
-        $order_number .= $all_orders+1 . 'A';
-
+        $order_number .= $all_orders;
+        $order_number .= 'A';
+        
+        $order_list = '';
         foreach($products as $product){
             $order_list .= $product->nazwa . ' - ' . $product->amount . ' szt. ('. $product->cena . '/szt.)'.' / ';
         }
@@ -377,8 +383,12 @@ class CardController extends Controller
             $faktura_id = NULL;
         }
 
+        $_POST['p24_session_id'] = uniqid();
+        $_POST['p24_order_id'] = $order_number;
+
         if(DB::table('order')->insert(['zamowienie' => $order_list, 'laczna_kwota' => $total, 'number_zamowienia' => $order_number, 
-        'rodzaj_platnosci' => $type_of_payment, 'status' => 'Zapłacone', 'uwagi_do_zamowienia' => session()->get('comment'),
+        'rodzaj_platnosci' => $type_of_payment, 'status' => 'Nieopłacone', 'uwagi_do_zamowienia' => session()->get('comment'),
+        'sposob_dostawy' => session()->get('delivery'), 'numer_sesji' => $_POST['p24_session_id'],
         'potwierdzenie_sprzedazy' => $method_of_sales, 'faktura_id' => $faktura_id, 'email' => session('client')->email,
         'name' => session('client')->name, 'surname' => session('client')->surname, 'phone' => session('client')->phone,
         'street' => session('client')->street, 'local_number' => session('client')->numberOfFlat, 'zip' => session('client')->zip,
@@ -391,13 +401,26 @@ class CardController extends Controller
                 $elements = $value->ilosc_dostepnych - $product->amount;
                 $value = $value->ilosc_kupionych + $product->amount;
                 DB::table('products')->where('id', $product->id)->update(['ilosc_kupionych' => $value, 'ilosc_dostepnych' => $elements]);
+                if(session()->get('delivery') == 'Odbiór osobisty'){
+                    $product->koszt_wysylki = 0;
+                }
                 if (Auth::id()) {
                     DB::table('user_history')->insert(['user_id' => Auth::user()->id, 'price' => $product->cena, 'price_delivery' => $product->koszt_wysylki,
                     'product' => $product->nazwa, 'category' => $product->kategoria, 'delivery_number' => $order_number, 'image' => $product->zdjecie1, 'street' =>  session('client')->street, 
                     'local_number' =>  session('client')->numberOfFlat, 'zip' =>  session('client')->zip, 'city' =>  session('client')->city, 
                     'name' =>  session('client')->name, 'surname' =>  session('client')->surname, 'phone' =>  session('client')->phone]);
+
+                    DB::table('cart')->where('user_id', Auth::user()->id)->delete();
+                } else {
+                    session()->forget('cart');
                 }
-                $tableProducts .= "<tr><td style='text-align:center'>".ucfirst($product->nazwa)."<td style='text-align:center'>".$product->amount."</td><td style='text-align:center'>".($product->cena+$product->koszt_wysylki)." zł</td><td style='text-align:center'>".$product->koszt_wysylki." zł</td></tr>";
+
+                $tableProducts .= "<tr>
+                <td style='text-align:center'>".ucfirst($product->nazwa)."</td>
+                <td style='text-align:center'>".$product->amount."</td>
+                <td style='text-align:center'>".($product->cena+$product->koszt_wysylki)." zł</td>
+                <td style='text-align:center'>".$product->koszt_wysylki." zł</td>
+                </tr>";
             }
 
             // Multiple recipients
@@ -411,25 +434,26 @@ class CardController extends Controller
             $message = '
             <html>
             <head>
-            <title>Dziękujemy za zakup w serwisie Arnet Meble</title>
+            <title>Dziękujemy za zakup w serwisie Arnet Meble Sklep</title>
             </head>
             <body>
             <div>
-            <img src="https://arnet-meble-sklep.pl/graphics/logo.png" alt="logo" width="100">
+            <img src="https://arnet-meble-sklep.pl/graphics/logo.png" alt="logo" width="200">
             </div>
             <p>Witaj, otrzymaliśmy Twoje zamówienie złożone w serwisie <a href="https://arnet-meble-sklep.pl">arnet-meble-sklep</a> - za co bardzo dziękujemy. </p>
             <p> Poniżej znajdują się informacje dotyczące Twojego zamówienia. </p>
             <p> <b> Numer zamówienia:</b> '.$order_number.'</p>
             <p> <b> Metoda płatności:</b> '.$type_of_payment.'</p>
-            <p> <b> Metoda dostawy:</b> Kurier </p>
+            <p> <b> Metoda dostawy:</b> '.session()->get('delivery').' </p>
+            <hr>
             <table>
                 <tr>
-                <th></th><th style="text-align:center">Produkt</th><th style="text-align:center">Ilość</th><th style="text-align:center">Cena za sztukę</th><th style="text-align:center">Kosz dostawy</th>
+                <th style="text-align:center">Produkt</th><th style="text-align:center">Ilość</th><th style="text-align:center">Cena za sztukę</th><th style="text-align:center">Kosz dostawy</th>
                 </tr>'.$tableProducts.'
             </table>
             <hr>
             <p> Pozdrawiamy i zapraszamy do zamawiania produktów w naszym seriwsie <a href="https://arnet-meble-sklep.pl/"> arnet-meble-sklep </a> </p> 
-            <p> Nasza obsługa jest czynna od 8:00 do 16:00 we wszystkie dni robocze. W razie potrzebny prosimy o kontakt za pośrednictwem zakłądki w naszym sewisie 
+            <p> Nasza obsługa jest czynna od 8:00 do 16:00 we wszystkie dni robocze. W razie potrzebny prosimy o kontakt za pośrednictwem zakładki w naszym sewisie 
             <a href="https://arnet-meble-sklep.pl/kontakt">kontakt</a> </p>
             <p> <b> Życzymy miłego dnia! </b> </p>
             <p> <b> Arnet Meble </b> </p>
@@ -448,13 +472,24 @@ class CardController extends Controller
             // Mail it
             mail($to, $subject, $message, implode("\r\n", $headers));
             
-            if(Auth::id()){
-                DB::table('cart')->where('user_id', Auth::id())->delete();
-            } else{
-                $request->session()->forget('cart');
+            if($type_of_payment == 'Przelew'){
+                $oPrzelewy24_API = new PrzelewyController();
+
+                        // Powrotny adres URL
+                $p24_url_return = 'https://arnet-meble-sklep.pl/';
+                
+                    // Adres dla weryfikacji płatności
+                $p24_url_status = 'https://arnet-meble-sklep.pl/przelew/weryfikacja';
+
+                $pay = $oPrzelewy24_API->Verify($_POST);
+
+                if($pay){
+                    $redirect = $oPrzelewy24_API->Pay($_POST['p24_amount'], $order_number, session('client')->email, 
+                    $p24_url_return, $p24_url_status, $_POST['p24_session_id']);
+                    Header('Location: ' . $redirect); exit;
+                }
             }
-
-
+            
             return redirect('/')->with('success', "Dziękujemy za zakup.");
         }else{
             return back()->with('error', "Zakup nie powiódł się.");

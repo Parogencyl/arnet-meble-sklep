@@ -8,6 +8,7 @@
         $userFavorite = DB::table('users_favorite')->where('user_id', Auth::user()->id)->where('kategoria_id', $product->id)->first();
         if (DB::table('cart')->where('user_id', Auth::user()->id)->where('kategoria_id', $product->id)->first()) {
             $amountCart = DB::table('cart')->where('user_id', Auth::user()->id)->where('kategoria_id', $product->id)->first();
+            $amountCart = $amountCart->amount;
         }
     }else {
         if (session()->get('cart')) {
@@ -19,7 +20,7 @@
             }
         }
     }
-
+    
     $isFavorite = false;
     if(session()->get('favorites')){
         for ($i=0; $i < count(session('favorites')); $i++) { 
@@ -29,8 +30,6 @@
             } 
         }
     }
-
-    //dd(DB::table('cart')->where('user_id', Auth::user()->id)->where('kategoria_id', $product->id)->first());
     
     ?>
 
@@ -112,8 +111,8 @@
                         @csrf
                         <input type="text" name="amount" value="1" id="amountForm" class="d-none">
                         <input type="text" name="id" value="{{ $product->id }}" class="d-none">
-                        @if ($product->ilosc_dostepnych && !($product->ilosc_dostepnych == $amountCart)) <button
-                            type="submit" class="btn btn-success btn-lg" id="addToCard"> <i
+                        @if ($product->ilosc_dostepnych && !($product->ilosc_dostepnych == $amountCart) &&
+                        $product->w_sprzedazy) <button type="submit" class="btn btn-success btn-lg" id="addToCard"> <i
                                 class="fas fa-shopping-basket mr-2 ">
                             </i>
                             Dodaj

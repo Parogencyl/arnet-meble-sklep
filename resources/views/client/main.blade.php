@@ -45,7 +45,7 @@
 
 <h1 class="text-center mb-sm-5 mb-3 mt-sm-4 mt-3 font-weight-bold text-uppercase"> Dane konta </h1>
 
-<div class="container">
+<div class="container pb-5">
     <div class="row justify-content-center">
         @include('layouts.clientNav')
 

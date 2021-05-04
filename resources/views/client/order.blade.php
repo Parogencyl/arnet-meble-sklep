@@ -12,14 +12,18 @@
         if($sessionProducts[$i]->ilosc_dostepnych && $sessionProducts[$i]->w_sprzedazy){
             $total += $sessionProducts[$i]->cena * $sessionProducts[$i]->amount;
             $totalProducts += $sessionProducts[$i]->cena * $sessionProducts[$i]->amount;
-            $delivery += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
-            $total += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+            if (!(session()->get('delivery') == 'Odbiór osobisty')) {
+                $delivery += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+                $total += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+            }
         }
     }
 
     $total = number_format($total, 2, '.', '');
-    $delivery = number_format($delivery, 2, '.', '');
     $totalProducts = number_format($totalProducts, 2, '.', '');
+    if (!$delivery == 0) {
+        $delivery = number_format($delivery, 2, '.', '');
+    }
 
     $agent = new \Jenssegers\Agent\Agent;
 
@@ -441,8 +445,8 @@
                 </div>
 
                 <a href="{{ url('koszyk') }}" class="btn btn-lg btn-dark mb-3"> WRÓĆ DO KOSZYKA </a>
-                <button type="submit" class="btn btn-lg btn-success ml-md-3 ml-0 mb-4" data-toggle="tooltip"
-                    id="finish">
+                <button type="submit" class="btn btn-lg btn-success ml-md-3 ml-0 mb-4 font-weight-bold"
+                    data-toggle="tooltip" id="finish">
                     PODSUMOWANIE </button>
 
             </form>
@@ -471,7 +475,8 @@
             <p class="mb-0 text-light"> <span class="text-green"> {{ $totalProducts }} zł </span> </p>
 
             <p class="mb-0 font-weight-bold mt-2"> Sposób wysyłki: </p>
-            <p class="mb-0 text-light"> Przesyłka kurierska - <span class="text-green"> {{ $delivery }} zł </span>
+            <p class="mb-0 text-light"> {{ session()->get('delivery') }} - <span class="text-green"> {{ $delivery }} zł
+                </span>
             </p>
 
             <p class="mb-0 font-weight-bold mt-2"> Sposób płatności: </p>

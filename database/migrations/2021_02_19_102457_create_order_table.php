@@ -20,7 +20,9 @@ class CreateOrderTable extends Migration
             $table->string('number_zamowienia')->unique();
             $table->string('rodzaj_platnosci');
             $table->string('status');
+            $table->string('numer_sesji');
             $table->text('uwagi_do_zamowienia')->nullable();
+            $table->text('sposob_dostawy');
             $table->string('potwierdzenie_sprzedazy');
             $table->integer('faktura_id')->nullable();
             $table->string('email');

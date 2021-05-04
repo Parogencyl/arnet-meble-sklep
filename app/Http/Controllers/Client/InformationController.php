@@ -201,6 +201,10 @@ class InformationController extends Controller
         }
 
         if(strtoupper($request->input('delete')) == 'TAK'){
+            if(DB::table('users_favorite')->where('user_id', Auth::user()->id)->delete() );
+            if(DB::table('user_history')->where('user_id', Auth::user()->id)->delete() );
+            if(DB::table('cart')->where('user_id', Auth::user()->id)->delete() );
+
             if(DB::table('users')->where('email', Auth::user()->email)->delete() ){
                 Auth::logout();
                 return redirect('/');

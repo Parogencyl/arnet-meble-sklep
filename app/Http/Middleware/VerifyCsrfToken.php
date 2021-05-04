@@ -12,6 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        'https://arnet-meble-sklep.pl/przelew/weryfikacja'
     ];
 }

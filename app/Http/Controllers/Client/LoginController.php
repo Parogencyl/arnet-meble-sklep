@@ -33,6 +33,8 @@ class LoginController extends Controller
 
         if(Auth::guard()->attempt(['email' => $request->email, 'password' => $request->password])){
             return redirect('/moje_konto/zarzadzanie');
+        } else {
+            return back()->with('error', 'Błędne dane');
         }
 
     }

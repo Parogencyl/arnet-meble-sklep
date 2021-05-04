@@ -1,6 +1,6 @@
 <?php
     $history = DB::table('user_history')->where('user_id', Auth::user()->id)->orderByDesc('bought_at')->get();
-
+    
     $users = DB::table('users')->where('id', Auth::user()->id)->get();
     $users = json_decode( json_encode($users[0]), true);
     $name = $users['name'];
@@ -8,14 +8,16 @@
         $name = 'Klient'.$users['id'];
     }
 
-    for ($i=0; $i < count($history); $i++) { 
-        $elements[$i] = json_decode( json_encode($history[$i]), true);
-    }
-
     $price = 0;
-    for ($i=0; $i < count($elements); $i++) { 
-        $price += $elements[$i]['price'];
-        $price += $elements[$i]['price_delivery'];
+    if (count($history)) {
+        for ($i=0; $i < count($history); $i++) { 
+            $elements[$i] = json_decode( json_encode($history[$i]), true);
+        }
+    
+        for ($i=0; $i < count($elements); $i++) { 
+            $price += $elements[$i]['price'];
+            $price += $elements[$i]['price_delivery'];
+        }
     }
 ?>
 
@@ -80,7 +82,7 @@
 @yield('style')
 <h1 class="text-center mb-sm-5 mb-3 mt-sm-4 mt-3 font-weight-bold text-uppercase"> Historia zakupów </h1>
 
-<div class="container">
+<div class="container pb-5">
     <div class="row justify-content-center">
         @include('layouts.clientNav')
 
@@ -116,12 +118,7 @@
                         style="cursor: pointer; color: rgb(97, 0, 0);"> SZCZEGÓŁY </span>
                     <span class="font-weight-bold px-3 mb-0" onclick="evaluation({{ $loop->index }})"
                         style="cursor: pointer; color: rgb(97, 0, 0);"> OCENA </span>
-                    <span class="font-weight-bold px-3 mb-0 ml-auto" style="cursor: pointer; color: rgb(97, 0, 0);">
-                        ZWROT
                     </span>
-                    <!--<p class="ml-md-auto ml-0 mb-0 pt-3 pt-md-0"> <span style="font-size: 12px"> RAZEM Z DOSTAWĄ:
-                        </span> <span class="font-weight-bold" style="font-size: 16px">
-                            {{ $item->price+$item->price_delivery }} zł</span> </p> -->
                 </div>
                 @if ($message = Session::get('success'))
                 <div class="alert alert-danger alert-block">

@@ -9,13 +9,17 @@
     for ($i=0; $i < count($products); $i++) { 
         $total += $products[$i]->cena * $products[$i]->amount;
         $totalProducts += $products[$i]->cena * $products[$i]->amount;
-        $delivery += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
-        $total += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
+        if (!(session()->get('delivery') == 'Odbiór osobisty')) {
+            $delivery += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
+            $total += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
+        }
     }
-
+    
     $total = number_format($total, 2, '.', '');
-    $delivery = number_format($delivery, 2, '.', '');
     $totalProducts = number_format($totalProducts, 2, '.', '');
+    if (!$delivery == 0) {
+        $delivery = number_format($delivery, 2, '.', '');
+    }
 
     $agent = new \Jenssegers\Agent\Agent;
 
@@ -416,8 +420,8 @@
                 </div>
 
                 <a href="{{ url('koszyk') }}" class="btn btn-lg btn-dark mb-3"> WRÓĆ DO KOSZYKA </a>
-                <button type="submit" class="btn btn-lg btn-success ml-md-3 ml-0 mb-4" data-toggle="tooltip"
-                    id="finish">
+                <button type="submit" class="btn btn-lg btn-success ml-md-3 ml-0 mb-4 font-weight-bold"
+                    data-toggle="tooltip" id="finish">
                     PODSUMOWANIE </button>
 
             </form>
@@ -444,7 +448,7 @@
             <p class="mb-0 txt"> <span class="text-green"> {{ $totalProducts }} zł </span> </p>
 
             <p class="mb-0 font-weight-bold mt-2"> Sposób wysyłki: </p>
-            <p class="mb-0 txt"> Przesyłka kurierska - <span class="text-green"> {{ $delivery }} zł </span>
+            <p class="mb-0 txt"> {{ session()->get('delivery') }} - <span class="text-green"> {{ $delivery }} zł </span>
             </p>
 
             <p class="mb-0 font-weight-bold mt-2"> Sposób płatności: </p>

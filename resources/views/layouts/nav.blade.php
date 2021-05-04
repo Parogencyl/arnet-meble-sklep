@@ -27,6 +27,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Damian Bohonos" />
+    <meta name="copyright" content="Copyright owner" />
+    <meta name="robots" content="follow" />
+    <meta name="keywords"
+        content="Arnet, meble, szafka, szafka nocna, meble na wymiar, na wymiar, meble składane, półka" />
+    <meta name="description" content="Firma Arnet funkcjonuje od 2000 roku. Przedmiotem naszej działalności jest projektowanie, wykonawstwo i montaż
+    mebli kuchennych i innych. Firma szczególnie specjalizuje się w wyposażaniu w meble i sprzęt kuchni o nietypowych kształtach, otwartych na
+    salon lub jadalnię oraz ekstremalnie małych, gdzie szczególnego znaczenia nabiera wykorzystanie powierzchni." />
+
+
+    <meta name="google-site-verification" content="nOVqvbZcLjftXraEtkKMdGdiknr5ESkr4O3ykQOKO5o" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -47,6 +58,7 @@
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <!-- Styles -->
+    <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
 
@@ -338,7 +350,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-center my-3"> Copyright 2020. Wszelkie prawa zastrzeżone. </div>
+        <div class="text-center my-3"> Copyright 2021. Wszelkie prawa zastrzeżone. </div>
     </footer>
 </body>
 

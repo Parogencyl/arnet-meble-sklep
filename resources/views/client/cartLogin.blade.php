@@ -216,6 +216,16 @@
                                     Przesyłka kurierska
                                 </label>
                             </div>
+
+                            <hr>
+
+                            <div class="custom-control custom-radio mb-2">
+                                <input class="custom-control-input" type="radio" name="delivery" id="exampleRadios2"
+                                    value="Odbiór osobisty">
+                                <label class="custom-control-label" for="exampleRadios2">
+                                    Odbiór osobisty
+                                </label>
+                            </div>
                         </div>
 
                         <hr style="border-top: 2px solid rgba(0, 0, 0, 0.3);">

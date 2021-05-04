@@ -61,7 +61,7 @@ class RegisterController extends Controller
             </div>
             <p>Witaj, właśnie zarejestrowałeś/aś się w serwisie <a href="https://arnet-meble-sklep.pl/"> arnet-meble-sklep </a> - za co bardzo dziękujemy. </p>
             <p> Dzięki rejestracji możliwe jest przeglądanie historii zamówień, a także wystawianie opinii zakupionym produktom. </p>
-            <p> W panelu użytkownika możliwe jest także podanie danych osobowych oraz miejsca zamieszkania, co usprawia proces zamawiania produktów w naszym seriwsie. </p>
+            <p> W panelu użytkownika możliwe jest także podanie danych osobowych oraz miejsca zamieszkania, co usprawnia proces zamawiania produktów w naszym seriwsie. </p>
             <hr>
             <p> Pozdrawiamy i zapraszamy do zamawiania produktów w naszym seriwsie <a href="https://arnet-meble-sklep.pl/"> arnet-meble-sklep </a> </p> 
             <p> Nasza obsługa jest czynna od 8:00 do 16:00 we wszystkie dni robocze. W razie potrzebny prosimy o kontakt za pośrednictwem zakłądki w naszym sewisie 

@@ -113,6 +113,7 @@
                 class="col-11 col-sm-6 col-md-4 col-xl-3 mb-4 text-decoration-none d-flex align-items-stretch item">
                 @endif
 
+                @if($product->w_sprzedazy)
                 <div class="card">
                     <img src="{{ asset($product->zdjecie1) }}" class="card-img-top p-2" alt="{{ $product->nazwa }}">
                     <div class="card-body bg-light pb-0">
@@ -210,6 +211,7 @@
                         @endif
 
                 </div>
+                @endif
             </a>
             @endforeach
 

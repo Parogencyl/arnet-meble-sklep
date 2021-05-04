@@ -52,15 +52,8 @@ Route::get('/na-wymiar', function () {
     return view('custom');
 });
 
-
-
-
-Route::get('/przelew', function () {
-    return view('przelew');
-});
-
-
-
+Route::post('/przelew/weryfikacja', [App\Http\Controllers\PrzelewyController::class, 'verifyPayment']);
+Route::post('/zakup/sprawdzenie', [App\Http\Controllers\CardController::class, 'buy']);
 
 Route::get('/produkty/{category}', [App\Http\Controllers\ProductController::class, 'index']);
 Route::get('/produkty/{category}/{subcategory}', [App\Http\Controllers\ProductController::class, 'index']);

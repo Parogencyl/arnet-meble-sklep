@@ -5,27 +5,28 @@
 
     session()->forget('alert');
 
-    for ($i=0; $i < count(session()->get('cart')); $i++) { 
-        array_push($sessionProducts, DB::table('products')->where('id', session()->get('cart')[$i]->id)->first());
-        $sessionProducts[$i]->amount = session()->get('cart')[$i]->amount;
-    }
-    
-    for ($i=0; $i < count(session()->get('cart')); $i++) { 
-        if ($sessionProducts[$i]->ilosc_dostepnych < session()->get('cart')[$i]->amount) {
-            session()->get('cart')[$i]->amount = $sessionProducts[$i]->ilosc_dostepnych;
-            $sessionProducts[$i]->amount =  $sessionProducts[$i]->ilosc_dostepnych;
-            session(['alert' => 'Ilość dostępnych przedmiotów "'.$sessionProducts[$i]->nazwa.'" wynosi '.$sessionProducts[$i]->ilosc_dostepnych]);
+    if (session()->get('cart')) {
+        for ($i=0; $i < count(session()->get('cart')); $i++) { 
+            array_push($sessionProducts, DB::table('products')->where('id', session()->get('cart')[$i]->id)->first());
+            $sessionProducts[$i]->amount = session()->get('cart')[$i]->amount;
         }
-    }
-
-    for ($i=0; $i < count($sessionProducts); $i++) { 
-        if($sessionProducts[$i]->ilosc_dostepnych && $sessionProducts[$i]->w_sprzedazy){
-            $total += $sessionProducts[$i]->cena * $sessionProducts[$i]->amount;
-            $total += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+        
+        for ($i=0; $i < count(session()->get('cart')); $i++) { 
+            if ($sessionProducts[$i]->ilosc_dostepnych < session()->get('cart')[$i]->amount) {
+                session()->get('cart')[$i]->amount = $sessionProducts[$i]->ilosc_dostepnych;
+                $sessionProducts[$i]->amount =  $sessionProducts[$i]->ilosc_dostepnych;
+                session(['alert' => 'Ilość dostępnych przedmiotów "'.$sessionProducts[$i]->nazwa.'" wynosi '.$sessionProducts[$i]->ilosc_dostepnych]);
+            }
         }
+        
+        for ($i=0; $i < count($sessionProducts); $i++) { 
+            if($sessionProducts[$i]->ilosc_dostepnych && $sessionProducts[$i]->w_sprzedazy){
+                $total += $sessionProducts[$i]->cena * $sessionProducts[$i]->amount;
+                $total += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+            }
+        }
+        $total = number_format($total, 2, '.', '');
     }
-
-    $total = number_format($total, 2, '.', '');
 
     $agent = new \Jenssegers\Agent\Agent;
 
@@ -215,9 +216,19 @@
                             <h3 class="font-weight-bold mb-4"> Sposób wysyłki </h3>
                             <div class="custom-control custom-radio mb-2">
                                 <input class="custom-control-input" type="radio" name="delivery" id="exampleRadios1"
-                                    value=" Przesyłka kurierska" checked>
+                                    value="Przesyłka kurierska" checked>
                                 <label class="custom-control-label" for="exampleRadios1">
                                     Przesyłka kurierska
+                                </label>
+                            </div>
+
+                            <hr>
+
+                            <div class="custom-control custom-radio mb-2">
+                                <input class="custom-control-input" type="radio" name="delivery" id="exampleRadios2"
+                                    value="Odbiór osobisty">
+                                <label class="custom-control-label" for="exampleRadios2">
+                                    Odbiór osobisty
                                 </label>
                             </div>
                         </div>

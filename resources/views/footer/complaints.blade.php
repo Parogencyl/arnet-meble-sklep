@@ -14,8 +14,7 @@
 
 <h1 class="text-center mb-sm-5 mb-3 mt-sm-4 mt-3 font-weight-bold"> REKLAMACJE I ZWROTY </h1>
 
-<section class="container">
-
+<section class="container mb-5">
     <div class="accordion" id="accordionExample">
 
         <div class="card">
@@ -32,12 +31,10 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                     <p>
-                        Jeżeli zakupiony produkt ma wadę, Klient ma prawo złożyć <b> REKLAMACJĘ </b>, w której określi
-                        swoje wymagania dotyczące doprowadzenia towaru do stanu opisanego na karcie produktu (tj. do
-                        stanu zgodności z umową).
+                        O więcej informacji prosimy o kontakt mailowy na adres <b>arnetgryfow@poczta.onet.pl</b> lub o
+                        skorzystanie z
+                        <a href="https://arnet-meble-sklep.pl/kontakt"> formularza kontaktowego </a> na naszej stronie.
                     </p>
-                    <p class="font-weight-bold"> Jak dokonać reklamacji? </p>
-                    <p>
                 </div>
             </div>
         </div>
@@ -55,9 +52,9 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
                     <p>
-                        Jeżeli zakupiony produkt ma wadę, Klient ma prawo złożyć <b> REKLAMACJĘ </b>, w której określi
-                        swoje wymagania dotyczące doprowadzenia towaru do stanu opisanego na karcie produktu (tj. do
-                        stanu zgodności z umową).
+                        O więcej informacji prosimy o kontakt mailowy na adres <b>arnetgryfow@poczta.onet.pl</b> lub o
+                        skorzystanie z
+                        <a href="https://arnet-meble-sklep.pl/kontakt"> formularza kontaktowego </a> na naszej stronie.
                     </p>
                 </div>
             </div>
@@ -76,9 +73,9 @@
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
                     <p>
-                        Jeżeli zakupiony produkt ma wadę, Klient ma prawo złożyć <b> REKLAMACJĘ </b>, w której określi
-                        swoje wymagania dotyczące doprowadzenia towaru do stanu opisanego na karcie produktu (tj. do
-                        stanu zgodności z umową).
+                        O więcej informacji prosimy o kontakt mailowy na adres <b>arnetgryfow@poczta.onet.pl</b> lub o
+                        skorzystanie z
+                        <a href="https://arnet-meble-sklep.pl/kontakt"> formularza kontaktowego </a> na naszej stronie.
                     </p>
                 </div>
             </div>
@@ -97,14 +94,13 @@
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                 <div class="card-body">
                     <p>
-                        Jeżeli zakupiony produkt ma wadę, Klient ma prawo złożyć <b> REKLAMACJĘ </b>, w której określi
-                        swoje wymagania dotyczące doprowadzenia towaru do stanu opisanego na karcie produktu (tj. do
-                        stanu zgodności z umową).
+                        O więcej informacji prosimy o kontakt mailowy na adres <b>arnetgryfow@poczta.onet.pl</b> lub o
+                        skorzystanie z
+                        <a href="https://arnet-meble-sklep.pl/kontakt"> formularza kontaktowego </a> na naszej stronie.
                     </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 @endsection

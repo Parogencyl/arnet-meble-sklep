@@ -1,5 +1,5 @@
 <?php
-    $products = DB::table('products')->orderby('id', 'desc')->take(6)->get();
+    $products = DB::table('products')->where('w_sprzedazy', 1)->where('ilosc_dostepnych', '>', '0')->orderby('id', 'desc')->take(6)->get();
 
     $baners = array();
     if($banersFiles = File::allFiles(public_path('graphics/baners'))){

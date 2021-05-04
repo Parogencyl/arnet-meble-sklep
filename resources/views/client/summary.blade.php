@@ -6,11 +6,17 @@
 
     if(Auth::id()){
         $products = DB::table('cart')->where('user_id', Auth::user()->id)->join('products', 'cart.kategoria_id', '=', 'products.id')->where('w_sprzedazy', 1)->where('ilosc_dostepnych', '>', 0)->get();
-        for ($i=0; $i < count($products); $i++) { 
-            $total += $products[$i]->cena * $products[$i]->amount;
-            $totalProducts += $products[$i]->cena * $products[$i]->amount;
-            $delivery += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
-            $total += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
+        if ($products) {
+            for ($i=0; $i < count($products); $i++) { 
+                $total += $products[$i]->cena * $products[$i]->amount;
+                $totalProducts += $products[$i]->cena * $products[$i]->amount;
+                if (!(session()->get('delivery') == 'Odbiór osobisty')) {
+                    $delivery += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
+                    $total += (ceil(($products[$i]->amount)/($products[$i]->ilosc_w_paczce)))*$products[$i]->koszt_wysylki;
+                }
+            }
+        }else {
+            return redirect("/koszyk");
         }
     } else {
         if(session()->get('cart')){
@@ -22,16 +28,22 @@
                 if($sessionProducts[$i]->ilosc_dostepnych && $sessionProducts[$i]->w_sprzedazy){
                     $total += $sessionProducts[$i]->cena * $sessionProducts[$i]->amount;
                     $totalProducts += $sessionProducts[$i]->cena * $sessionProducts[$i]->amount;
-                    $delivery += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
-                    $total += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+                    if (!(session()->get('delivery') == 'Odbiór osobisty')) {
+                        $delivery += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+                        $total += (ceil(($sessionProducts[$i]->amount)/($sessionProducts[$i]->ilosc_w_paczce)))*$sessionProducts[$i]->koszt_wysylki;
+                    }
                 }
             }
+        } else {
+            return redirect("/koszyk");
         }
         $products = $sessionProducts;
     }
 
     $total = number_format($total, 2, '.', '');
-    $delivery = number_format($delivery, 2, '.', '');
+    if (!$delivery == 0) {
+        $delivery = number_format($delivery, 2, '.', '');
+    }
     $totalProducts = number_format($totalProducts, 2, '.', '');
 
     $agent = new \Jenssegers\Agent\Agent;
@@ -162,11 +174,18 @@
                 koszt: <span id="total">
                     {{ $total }} </span> zł </div>
 
-            <form action="/summary/buy" method="POST" class="mt-5 d-flex justify-content-center">
+            <form action="{{ url('/zakup/sprawdzenie') }}" method="POST" class="mt-5 d-flex justify-content-center">
                 @csrf
+
+                <input type="hidden" name="p24_merchant_id" value="140219" />
+                <input type="hidden" name="p24_pos_id" value="140219" />
+                <input type="hidden" name="p24_amount" id="p24_priceToPay" value="{{ ($total)*100 }}" />
+
+
                 <a href="{{ url('koszyk/zamówienie') }}" class="btn btn-lg btn-dark mb-4"> ZMIEŃ DANE </a>
 
-                <button type="submit" class="btn btn-lg btn-success ml-3 mb-4" disabled> ZAMÓW I ZAPŁAĆ </button>
+                <button type="submit" class="btn btn-lg btn-success ml-3 mb-4 font-weight-bold"> ZAMÓW I ZAPŁAĆ
+                </button>
 
             </form>
 
@@ -195,7 +214,7 @@
             <p class="mb-0 txt"> <span class="text-green"> {{ $totalProducts }} zł </span> </p>
 
             <p class="mb-0 font-weight-bold mt-2"> Sposób wysyłki: </p>
-            <p class="mb-0 txt"> Przesyłka kurierska - <span class="text-green"> {{ $delivery }} zł </span>
+            <p class="mb-0 txt"> {{ session()->get('delivery') }} - <span class="text-green"> {{ $delivery }} zł </span>
             </p>
 
             <p class="mb-0 font-weight-bold mt-2"> Sposób płatności: </p>

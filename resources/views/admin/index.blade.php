@@ -184,7 +184,8 @@
         </div>
     </div>
     <div class="text-center mt-4">
-        <button class="btn btn-dark btn-lg"> <a href="{{ url('realizacje') }}" class="text-decoration-none text-white">
+        <button class="btn btn-dark btn-lg"> <a href="{{ url('admin/realizacje') }}"
+                class="text-decoration-none text-white">
                 Więcej </a>
         </button>
     </div>
